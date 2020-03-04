@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/qr"
+        android:icon="@drawable/barcode_scanner"
+        android:title="QR_Code" />
+    <item
+        android:id="@+id/bs"
+        android:icon="@drawable/book_shop"
+        android:title="Book_Shop" />
+    <item
+        android:id="@+id/rd"
+        android:icon="@drawable/plant_under_rain"
+        android:title="Recorder" />
+    <item
+        android:id="@+id/ps"
+        android:icon="@drawable/person"
+        android:title="Person" />
+</menu>

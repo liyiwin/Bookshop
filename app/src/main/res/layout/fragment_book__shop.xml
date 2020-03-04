@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainPage_Fragments.Book_ShopFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/book_shop_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#52DACB"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/menu_two"
+        app:title="書店"
+        app:titleMarginStart="190dp"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Large"
+        app:titleTextColor="@android:color/background_light" />
+
+<FrameLayout
+    android:id="@+id/frameLayout"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginEnd="2dp"
+    android:layout_marginBottom="124dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/book_shop_toolbar">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/my_book_recyclerview"
+        android:layout_width="409dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="1dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/neterro"
+        tools:src="@tools:sample/avatars" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView38"
+            android:layout_width="332dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="52dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:text="你確定你有開網路嗎？？？？"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

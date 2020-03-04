@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Recoder_Page.NoteDataActivity">
+
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/note_data_toolbar"
+    android:layout_width="370dp"
+    android:layout_height="58dp"
+    android:background="#E6F0EF"
+    android:minHeight="?attr/actionBarSize"
+    android:theme="?attr/actionBarTheme"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:menu="@menu/menu_notedetail" />
+
+<com.google.android.material.tabs.TabLayout
+    android:id="@+id/note_data_tabLayout"
+    android:layout_width="382dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/note_data_toolbar">
+
+    <com.google.android.material.tabs.TabItem
+        android:id="@+id/note_data_detail_tab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="詳情" />
+
+    <com.google.android.material.tabs.TabItem
+        android:id="@+id/note_data_attension_tab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="注意" />
+
+</com.google.android.material.tabs.TabLayout>
+
+<androidx.viewpager.widget.ViewPager
+    android:id="@+id/note_data_container"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginTop="1dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/note_data_tabLayout" />
+</androidx.constraintlayout.widget.ConstraintLayout>

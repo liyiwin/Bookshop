@@ -14,7 +14,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.book_shopedit.Data.my_data_good_sentence
 import com.example.book_shopedit.Model.add_bookdata
-import com.example.book_shopedit.Model.add_contents
+import com.example.book_shopedit.Model.add_quotes
 import com.example.book_shopedit.Model.add_experience
 import com.example.book_shopedit.R
 import com.example.book_shopedit.Recoder_Page.NoteFragment.AddNote_AttentionFragment
@@ -58,46 +58,11 @@ class AddNoteActivity : AppCompatActivity() {
 
     private var  information_responsecode = "0"
 
-    private var  content_responsecode = "0"
-
-    private var  quotes_responsecode = "0"
-
-     var handler = Handler()
-
-     var runnable = object :Runnable{
-        override fun run() {
-
-        }
-
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_note)
 
-       runnable = object :Runnable{
-
-           override fun run() {
-
-               handler.postDelayed(runnable,500)
-
-               if (information_responsecode == "200" && content_responsecode == "200" && quotes_responsecode == "200") {
-
-                   handler.removeCallbacks(runnable)
-
-                   val intent = Intent(this@AddNoteActivity,NotesActivity::class.java)
-
-                   startActivity(intent)
-
-                   Toast.makeText(this@AddNoteActivity,"儲存成功",Toast.LENGTH_SHORT).show()
-
-               }
-
-           }
-
-       }
-
-        handler.postDelayed(runnable,500)
 
         val pref = sharedPreference_login(this)
 
@@ -185,15 +150,12 @@ class AddNoteActivity : AppCompatActivity() {
 
         val information_responsecode_Obeserver = Observer<String>{
 
-            information_responsecode = it
-
             if (it == "200"){
 
                 if (reading_content_id != "" && reading_info_id != ""){
 
                     add_experience(apitoken,reading_info_id,experience,note,viewModel_addNote,this)
 
-                    add_contents (apitoken,my_sentencelist ,reading_content_id,reading_info_id,viewModel_addNote,this)
 
                 }
 
@@ -208,7 +170,13 @@ class AddNoteActivity : AppCompatActivity() {
 
         val content_responsecode_Obeserver = Observer<String> {
 
-            content_responsecode = it
+            if (it == "200"){
+
+            add_quotes (apitoken,my_sentencelist ,reading_content_id,reading_info_id,viewModel_addNote,this)
+
+            }
+
+
 
         }
 
@@ -217,7 +185,10 @@ class AddNoteActivity : AppCompatActivity() {
 
         val quotes_responsecode_Obeserver = Observer<String> {
 
-            quotes_responsecode = it
+          if (it == "200"){
+
+
+          }
 
         }
 
@@ -227,7 +198,6 @@ class AddNoteActivity : AppCompatActivity() {
         val note__Obeserver = Observer<String> {
 
             note = it
-
 
         }
 
@@ -264,7 +234,7 @@ class AddNoteActivity : AppCompatActivity() {
 
           true
 
-        }
+       }
 
     }
 

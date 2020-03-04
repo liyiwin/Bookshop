@@ -90,9 +90,9 @@ class NotesActivity : AppCompatActivity() {
 
               layoutManager = LinearLayoutManager(this@NotesActivity)
 
-                my_adapter = Note_Adapter(this@NotesActivity,it)
+               my_adapter = Note_Adapter(this@NotesActivity,it)
 
-                adapter =  my_adapter
+               adapter =  my_adapter
 
                my_adapter.my_click(object:Note_Adapter.Click{
 

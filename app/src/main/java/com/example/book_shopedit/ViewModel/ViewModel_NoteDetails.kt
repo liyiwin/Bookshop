@@ -5,7 +5,8 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.example.book_shopedit.Data.my_data_good_sentence
 
-class ViewModel_AddNote(app: Application): AndroidViewModel(app) {
+class ViewModel_NoteDetails(app: Application): AndroidViewModel(app) {
+
 
     private var title = MutableLiveData<String>()
     private var press = MutableLiveData<String>()
@@ -13,59 +14,44 @@ class ViewModel_AddNote(app: Application): AndroidViewModel(app) {
     private var author = MutableLiveData<String>()
     private var status = MutableLiveData<String>()
     private var score = MutableLiveData<String>()
-    private var path = MutableLiveData<String>()
+    private var uri = MutableLiveData<String>()
     private var reading_info_id = MutableLiveData<String>()
     private var reading_content_id = MutableLiveData<String>()
     private var experience = MutableLiveData<String>()
     private var note = MutableLiveData<String>()
     private var positive_quotes = MutableLiveData<MutableList<my_data_good_sentence>>()
-    private var information_responsecode = MutableLiveData<String>()
-    private var content_responsecode = MutableLiveData<String>()
-    private var quotes_responsecode = MutableLiveData<String>()
+    private var bookdetails_responsecode = MutableLiveData<String>()
+    private var booknote_responsecode = MutableLiveData<String>()
 
 
+    fun set_bookdetails_responsecode(my_bookdetails_responsecode:String){
 
-    fun set_information_responsecode(my_information_responsecode:String){
-
-        information_responsecode.value = my_information_responsecode
+        bookdetails_responsecode.value = my_bookdetails_responsecode
 
     }
 
 
-    fun get_information_responsecode():MutableLiveData<String>{
+    fun get_bookdetails_responsecode():MutableLiveData<String>{
 
-        return information_responsecode
-
-    }
-
-
-
-    fun set_content_responsecode(my_content_responsecode:String){
-
-        content_responsecode.value = my_content_responsecode
+        return bookdetails_responsecode
 
     }
 
 
-    fun get_content_responsecode():MutableLiveData<String>{
 
-        return content_responsecode
+    fun set_booknote_responsecode(my_booknote_responsecode:String){
 
-    }
-
-
-    fun set_quotes_responsecode(my_quotes_responsecode:String){
-
-        quotes_responsecode.value = my_quotes_responsecode
+        booknote_responsecode.value = my_booknote_responsecode
 
     }
 
 
-    fun get_quotes_responsecode():MutableLiveData<String>{
+    fun get_booknote_responsecode():MutableLiveData<String>{
 
-        return quotes_responsecode
+        return booknote_responsecode
 
     }
+
 
 
     fun set_title (my_title:String){
@@ -178,15 +164,16 @@ class ViewModel_AddNote(app: Application): AndroidViewModel(app) {
 
     }
 
-    fun set_path (my_path:String){
+    fun set_uri (my_uri:String){
 
-        path .value = my_path
+
+        uri .value = my_uri
 
     }
 
-    fun get_path():MutableLiveData<String>{
+    fun get_uri():MutableLiveData<String>{
 
-        return path
+        return uri
 
     }
 
@@ -215,7 +202,5 @@ class ViewModel_AddNote(app: Application): AndroidViewModel(app) {
         return positive_quotes
 
     }
-
-
 
 }

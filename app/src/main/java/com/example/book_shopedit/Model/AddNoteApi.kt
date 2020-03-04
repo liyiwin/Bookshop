@@ -3,7 +3,9 @@ package com.example.book_shopedit.Model
 import android.app.Activity
 import android.content.Intent
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import com.example.book_shopedit.Data.my_data_good_sentence
+import com.example.book_shopedit.Recoder_Page.NotesActivity
 import com.example.book_shopedit.ViewModel.ViewModel_AddNote
 import okhttp3.*
 import org.json.JSONObject
@@ -56,8 +58,6 @@ fun add_bookdata(api_token:String,title:String,press:String,language:String,auth
             if (code == 200) {
 
                 val jsonObject = JSONObject(myjson)
-
-
 
                 val object_infoContents =  jsonObject.getJSONObject( "data about InfoContents")
 
@@ -117,7 +117,7 @@ fun add_experience(api_token:String,reading_info_id:String,experience:String,not
 }
 
 
-fun add_contents (api_token:String, my_sentencelist:MutableList<my_data_good_sentence>, reading_content_id:String, reading_info_id:String,viewModel:ViewModel_AddNote,activity: Activity){
+fun add_quotes (api_token:String, my_sentencelist:MutableList<my_data_good_sentence>, reading_content_id:String, reading_info_id:String, viewModel:ViewModel_AddNote, activity: Activity){
 
     for (i in 0 until my_sentencelist.size) {
 
@@ -147,17 +147,25 @@ fun add_contents (api_token:String, my_sentencelist:MutableList<my_data_good_sen
 
                 if (code == 200) {
 
-                   while (i == my_sentencelist.size -1){
+                   if (i == my_sentencelist.size -1){
+
                        activity.runOnUiThread{
-                       viewModel.set_quotes_responsecode("200")}
+
+                         viewModel.set_quotes_responsecode("200")
+
+                           Toast.makeText(activity,"儲存成功",Toast.LENGTH_SHORT).show()
+
+                           val intent = Intent(activity, NotesActivity::class.java)
+
+                           activity.startActivity(intent)
+
+                       }
 
                    }
-
 
                 }
             }
         })
-
 
     }
 

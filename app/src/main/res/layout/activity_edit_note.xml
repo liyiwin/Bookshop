@@ -7,17 +7,17 @@
     tools:context=".Recoder_Page.EditNoteActivity">
 
 
-<androidx.appcompat.widget.Toolbar
-    android:id="@+id/edit_note_toolbar"
-    android:layout_width="370dp"
-    android:layout_height="53dp"
-    android:layout_marginStart="1dp"
-    android:background="#E6F0EF"
-    android:minHeight="?attr/actionBarSize"
-    android:theme="?attr/actionBarTheme"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:menu="@menu/menu_editnote" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/edit_note_toolbar"
+        android:layout_width="370dp"
+        android:layout_height="53dp"
+        android:background="#E6F0EF"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/menu_editnote"
+        app:navigationIcon="?attr/homeAsUpIndicator" />
 
 <com.google.android.material.tabs.TabLayout
     android:id="@+id/tabLayout3"

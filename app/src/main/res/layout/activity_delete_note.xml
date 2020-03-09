@@ -6,4 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".Recoder_Page.DeleteNoteActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/deletenote_toolbar"
+        android:layout_width="370dp"
+        android:layout_height="57dp"
+        android:background="#00BCD4"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/menu_deletenote"
+        app:navigationIcon="?attr/homeAsUpIndicator" />
+
+    <FrameLayout
+    android:layout_width="407dp"
+    android:layout_height="0dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/deletenote_toolbar">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/delete_list_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

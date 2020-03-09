@@ -7,36 +7,24 @@
     tools:context=".Recoder_Page.AddNoteActivity">
 
 
-<androidx.appcompat.widget.Toolbar
-    android:id="@+id/add_note_toolbar"
-    android:layout_width="413dp"
-    android:layout_height="54dp"
-    android:background="#E6F0EF"
-    android:minHeight="?attr/actionBarSize"
-    android:theme="?attr/actionBarTheme"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:menu="@menu/menu_addnote" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/add_note_toolbar"
+        android:layout_width="370dp"
+        android:layout_height="54dp"
+        android:background="#E6F0EF"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/menu_addnote"
+        app:navigationIcon="?attr/homeAsUpIndicator" />
 
 <com.google.android.material.tabs.TabLayout
     android:id="@+id/tabLayout"
     android:layout_width="382dp"
     android:layout_height="50dp"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/add_note_toolbar">
-
-    <com.google.android.material.tabs.TabItem
-        android:id="@+id/add_note_detail_tab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="詳情" />
-
-    <com.google.android.material.tabs.TabItem
-        android:id="@+id/add_note_attension_tab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="注意" />
-</com.google.android.material.tabs.TabLayout>
+    app:layout_constraintTop_toBottomOf="@+id/add_note_toolbar"/>
 
 <androidx.viewpager.widget.ViewPager
     android:id="@+id/add_note_container"

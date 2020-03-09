@@ -64,14 +64,11 @@ class NoteImportantAdapter(val context: Context, var outer_list:MutableList<my_d
             holder.my_note_star.setImageResource(R.drawable.star_two)
 
 
-            status = 0
-
 
         } else {
 
             holder.my_note_star.setImageResource(R.drawable.star)
 
-            status = 1
 
         }
 
@@ -96,6 +93,14 @@ class NoteImportantAdapter(val context: Context, var outer_list:MutableList<my_d
 
         val my_container = view.findViewById<ConstraintLayout>(R.id.my_container)
 
+
+    }
+
+    fun update (list:MutableList<my_data_book_note>){
+
+        inner_list = list
+
+        notifyDataSetChanged()
 
     }
 }

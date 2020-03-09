@@ -1,8 +1,11 @@
 package com.example.book_shopedit.Model
 
 import android.app.Activity
+import android.content.SharedPreferences
 import com.example.book_shopedit.Data.my_data_good_sentence
+import com.example.book_shopedit.Data.my_data_good_sentence_edit
 import com.example.book_shopedit.ViewModel.ViewModel_NoteDetails
+import com.example.book_shopedit.sharedPreference.sharedPrefernce_EditData
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.Request
@@ -36,8 +39,6 @@ fun getBookdetails(read_info_id:String,apitoken:String,activity: Activity,viewMo
 
                 val data =  jsonObject.getJSONObject("data")
 
-
-
                 val title  = data.getString("title")
                 val press  = data.getString("press")
                 val language  = data.getString("language")
@@ -45,7 +46,6 @@ fun getBookdetails(read_info_id:String,apitoken:String,activity: Activity,viewMo
                 val status  = data.getInt("status")
                 val image  = data.getString("image")
                 val score  = data.getInt("score")
-
 
 
                 activity.runOnUiThread {
@@ -67,20 +67,15 @@ fun getBookdetails(read_info_id:String,apitoken:String,activity: Activity,viewMo
 
                         viewModel.set_status("閱讀中")
 
-
                     }
 
                     viewModel.set_score(score.toString())
-                     viewModel.set_uri(image)
+                   viewModel.set_uri(image)
 
-                    viewModel.set_bookdetails_responsecode("200")
 
                 }
 
-
             }
-
-
 
         }
     })
@@ -94,6 +89,8 @@ fun getBooknote(read_content_id:String,apitoken: String,activity: Activity,viewM
 
     val my_list = mutableListOf<my_data_good_sentence>()
 
+    val my_list_edit = mutableListOf<my_data_good_sentence_edit>()
+
     val url = "http://104.199.148.167/api/reading/contents/$read_content_id"
     val request = Request.Builder().url(url).addHeader("Authorization", "Bearer $apitoken").build()
     val call = OkHttpClient .newCall(request)
@@ -105,6 +102,7 @@ fun getBooknote(read_content_id:String,apitoken: String,activity: Activity,viewM
         override fun onResponse(call: Call, response: Response) {
 
             val myjson = response.body()?.string()!!.trim()
+
 
             val code = response.code()
 
@@ -122,7 +120,11 @@ fun getBooknote(read_content_id:String,apitoken: String,activity: Activity,viewM
 
                     val pages = my_object.getInt("pages")
 
+                    val id = my_object.getInt("id")
+
                     my_list.add(my_data_good_sentence(pages,positive_quotes))
+
+                    my_list_edit.add(my_data_good_sentence_edit(pages,positive_quotes,id))
 
                 }
 
@@ -132,13 +134,17 @@ fun getBooknote(read_content_id:String,apitoken: String,activity: Activity,viewM
 
                 activity.runOnUiThread{
 
+                    // NoteDataPage
+
                     viewModel.set_positive_quotes(my_list)
+
+                    //EditNotePage
+
+                    viewModel.set_positive_quotes_edit(my_list_edit)
 
                     viewModel.set_experience(experience)
 
                     viewModel.set_note(note)
-
-                    viewModel.set_booknote_responsecode("200")
 
                 }
 
@@ -147,6 +153,6 @@ fun getBooknote(read_content_id:String,apitoken: String,activity: Activity,viewM
         }
     })
 
-
-
 }
+
+

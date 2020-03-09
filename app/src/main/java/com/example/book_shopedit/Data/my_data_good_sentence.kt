@@ -6,5 +6,4 @@ data class my_data_good_sentence (
 
     val sentence:String
 
-
 )

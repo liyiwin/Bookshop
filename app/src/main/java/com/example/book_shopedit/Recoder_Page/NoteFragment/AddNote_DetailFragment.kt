@@ -132,13 +132,13 @@ class AddNote_DetailFragment : Fragment() {
 
                  myPage = mDialogView.my_add_page.text.toString().toInt()
 
-                 my_list.add(my_data_good_sentence(myPage, my_sentence))
+                 my_list.add(my_data_good_sentence(myPage,my_sentence))
 
                  viewModel_addNote.set_positive_quotes(my_list)
 
                  my_adapter.update(my_list)
 
-                mBuilder.dismiss()
+                 mBuilder.dismiss()
 
             }
 

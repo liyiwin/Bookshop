@@ -35,7 +35,6 @@ class ViewModel_AddNote(app: Application): AndroidViewModel(app) {
     fun get_information_responsecode():MutableLiveData<String>{
 
         return information_responsecode
-
     }
 
 

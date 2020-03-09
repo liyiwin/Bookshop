@@ -142,4 +142,12 @@ class Note_Adapter(val context: Context, var outer_list:MutableList<my_data_book
         val my_container = view.findViewById<ConstraintLayout>(R.id.my_container)
 
     }
+
+    fun  update (list:MutableList<my_data_book_note>){
+
+        inner_list = list
+
+        notifyDataSetChanged()
+
+    }
 }

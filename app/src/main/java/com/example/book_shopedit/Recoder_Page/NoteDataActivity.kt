@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -39,14 +40,9 @@ class NoteDataActivity : AppCompatActivity() {
 
         val read_content = intent.getStringExtra("read_content")
 
-        viewModel_notedetails.set_reading_info_id(read_info_id!!)
+       getBookdetails(read_info_id!!,apitoken!!,this,viewModel_notedetails)
 
-        viewModel_notedetails.set_reading_content_id(read_content!!)
-
-       getBookdetails(read_info_id,apitoken!!,this,viewModel_notedetails)
-
-       getBooknote(read_content,apitoken,this,viewModel_notedetails)
-
+       getBooknote(read_content!!,apitoken,this,viewModel_notedetails)
 
         note_data_toolbar.inflateMenu(R.menu.menu_notedetail)
         note_data_toolbar.setOnMenuItemClickListener {
@@ -57,15 +53,45 @@ class NoteDataActivity : AppCompatActivity() {
 
                     val intent = Intent(this@NoteDataActivity,EditNoteActivity::class.java)
 
+                    intent.putExtra("read_info_id",read_info_id)
+
+                    intent.putExtra("read_content",read_content)
+
                     startActivity(intent)
 
                 }
-
             }
 
-            true
+          true
 
         }
+
+        note_data_toolbar.setNavigationOnClickListener {
+
+            val intent = Intent(this,NotesActivity::class.java)
+
+            startActivity(intent)
+
+            finish()
+
+
+        }
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+
+            val intent = Intent(this,NotesActivity::class.java)
+
+            startActivity(intent)
+
+            finish()
+
+            return false
+        }
+
+        return super.onKeyDown(keyCode, event)
     }
 
     private fun setupView() {
@@ -95,11 +121,10 @@ class NoteDataActivity : AppCompatActivity() {
 
         override fun getCount(): Int = 2
 
-        override fun getPageTitle(position: Int): CharSequence {
+        override fun getPageTitle(position: Int):CharSequence{
             when(position){
                 0 -> return "基本資料"
                 else-> return "心得"
-
             }
         }
 

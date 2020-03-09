@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -58,11 +59,9 @@ class AddNoteActivity : AppCompatActivity() {
 
     private var  information_responsecode = "0"
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_note)
-
 
         val pref = sharedPreference_login(this)
 
@@ -78,7 +77,6 @@ class AddNoteActivity : AppCompatActivity() {
         val press_Obeserver =Observer<String>{
 
             press = it
-
         }
 
         viewModel_addNote.get_press().observe(this,press_Obeserver)
@@ -188,6 +186,7 @@ class AddNoteActivity : AppCompatActivity() {
           if (it == "200"){
 
 
+
           }
 
         }
@@ -236,6 +235,34 @@ class AddNoteActivity : AppCompatActivity() {
 
        }
 
+        add_note_toolbar.setNavigationOnClickListener {
+
+          val intent = Intent(this,NotesActivity::class.java)
+
+            startActivity(intent)
+
+            finish()
+
+
+        }
+
+    }
+
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+
+            val intent = Intent(this,NotesActivity::class.java)
+
+            startActivity(intent)
+
+            finish()
+
+            return false
+        }
+
+        return super.onKeyDown(keyCode, event)
     }
 
     private fun setupView() {
@@ -273,7 +300,6 @@ class AddNoteActivity : AppCompatActivity() {
 
             }
         }
-
 
     }
 }

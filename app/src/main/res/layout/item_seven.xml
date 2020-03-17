@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical">
+
+<View
+    android:id="@+id/divider17"
+    android:layout_width="match_parent"
+    android:layout_height="3dp"
+    android:background="#14000000" />
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="100dp">
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="20dp"
+        android:text="所有分類"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="5dp"
+        android:text="服務代訂\n英文書"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView14" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:text="主題推薦"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView15" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="5dp"
+        android:text="套件滿五千\n送撲克牌"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/TotoalSortbtn"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        app:layout_constraintEnd_toStartOf="@+id/Global_SellWellbtn"
+        app:srcCompat="@drawable/book_shelf" />
+
+    <ImageView
+        android:id="@+id/FreeBookbtn"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView14"
+        app:layout_constraintEnd_toStartOf="@+id/LastBookbtn"
+        app:srcCompat="@drawable/cherry_donut" />
+
+    <ImageView
+        android:id="@+id/Global_SellWellbtn"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView13"
+        app:layout_constraintEnd_toStartOf="@+id/FreeBookbtn"
+        app:srcCompat="@drawable/earth_planet" />
+
+    <ImageView
+        android:id="@+id/LastBookbtn"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/new_shop" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -146,9 +146,11 @@ class AddNoteActivity : AppCompatActivity() {
 
 
 
-        val information_responsecode_Obeserver = Observer<String>{
+        val information_responsecode_Obeserver = Observer<String>
+        {
 
-            if (it == "200"){
+            if (it == "200")
+            {
 
                 if (reading_content_id != "" && reading_info_id != ""){
 
@@ -157,24 +159,20 @@ class AddNoteActivity : AppCompatActivity() {
 
                 }
 
-
             }
-
 
         }
 
         viewModel_addNote.get_information_responsecode().observe(this,information_responsecode_Obeserver)
 
 
-        val content_responsecode_Obeserver = Observer<String> {
+        val content_responsecode_Obeserver = Observer<String>{
 
             if (it == "200"){
 
-            add_quotes (apitoken,my_sentencelist ,reading_content_id,reading_info_id,viewModel_addNote,this)
+            add_quotes(apitoken,my_sentencelist,reading_content_id,reading_info_id,viewModel_addNote,this)
 
             }
-
-
 
         }
 
@@ -242,7 +240,6 @@ class AddNoteActivity : AppCompatActivity() {
             startActivity(intent)
 
             finish()
-
 
         }
 

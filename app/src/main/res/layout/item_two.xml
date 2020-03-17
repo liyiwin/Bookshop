@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="411dp"
+    android:layout_height="300dp"
+    android:orientation="vertical">
+
+<View
+    android:id="@+id/divider5"
+    android:layout_width="409dp"
+    android:layout_height="3dp"
+    android:layout_marginTop="1dp"
+    android:layout_marginEnd="1dp"
+    android:background="#14000000"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<TextView
+    android:id="@+id/hot_text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="52dp"
+    android:layout_marginTop="60dp"
+    android:text="暢銷"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<TextView
+    android:id="@+id/try_text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="112dp"
+    android:layout_marginTop="60dp"
+    android:text="試讀"
+    app:layout_constraintStart_toEndOf="@+id/hot_text"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<TextView
+    android:id="@+id/read_text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="104dp"
+    android:layout_marginTop="60dp"
+    android:text="閱讀"
+    app:layout_constraintStart_toEndOf="@+id/try_text"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<ImageView
+    android:id="@+id/hot_book"
+    android:layout_width="101dp"
+    android:layout_height="100dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="37dp"
+    app:layout_constraintEnd_toStartOf="@+id/try_book"
+    app:layout_constraintTop_toBottomOf="@+id/hot_text"
+    app:srcCompat="@drawable/book_one" />
+
+<ImageView
+    android:id="@+id/try_book"
+    android:layout_width="101dp"
+    android:layout_height="100dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="34dp"
+    app:layout_constraintEnd_toStartOf="@+id/read_book"
+    app:layout_constraintTop_toBottomOf="@+id/try_text"
+    app:srcCompat="@drawable/book_two" />
+
+<ImageView
+    android:id="@+id/read_book"
+    android:layout_width="101dp"
+    android:layout_height="100dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="16dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/read_text"
+    app:srcCompat="@drawable/book_three" />
+
+<TextView
+    android:id="@+id/textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="11dp"
+    android:layout_marginEnd="20dp"
+    android:text="more..."
+    android:textColor="@android:color/background_dark"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/divider5" />
+</androidx.constraintlayout.widget.ConstraintLayout>

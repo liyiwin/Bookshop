@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="180dp"
+        android:layout_height="140dp"
+        android:layout_marginBottom="1dp"
+        app:cardCornerRadius="8dp"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:id="@+id/layou"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/totoal_sort_text"
+                android:layout_width="84dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="31dp"
+                android:layout_marginEnd="12dp"
+                android:layout_toStartOf="@+id/totoal_sort_imageView"
+                android:textColor="@android:color/background_dark"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/totoal_sort_imageView"
+                android:layout_width="72dp"
+                android:layout_height="101dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="2dp"
+                app:srcCompat="@drawable/book_three" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

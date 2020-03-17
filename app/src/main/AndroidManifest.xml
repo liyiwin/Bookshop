@@ -14,7 +14,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Recoder_Page.EditNoteActivity"></activity>
+        <activity android:name=".BookShop_Page.Book_list_twoActivity"></activity>
+        <activity android:name=".BookShop_Page.TotoalSortActivity" />
+        <activity android:name=".BookShop_Page.Book_listActivity" />
+        <activity android:name=".BookShop_Page.Book_DetailActivity" />
+        <activity android:name=".Recoder_Page.EditNoteActivity" />
         <activity android:name=".Recoder_Page.NoteDataActivity" />
         <activity android:name=".Recoder_Page.ImportantNoteActivity" />
         <activity android:name=".Recoder_Page.DeleteNoteActivity" />

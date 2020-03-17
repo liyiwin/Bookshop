@@ -47,7 +47,7 @@ class DeleteNoteActivity : AppCompatActivity() {
 
         }
 
-        val pref = sharedPreference_login(this)
+      val pref = sharedPreference_login(this)
 
       val  token = pref.get_apitoken()!!
 

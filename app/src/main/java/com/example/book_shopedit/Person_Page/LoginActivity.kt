@@ -55,8 +55,8 @@ class LoginActivity : AppCompatActivity() {
 
     fun mydata_input(){
 
-        my_mail = "liy721511@gmail.com"
-        my_password= "1212"
+        my_mail = login_email.text.toString()
+        my_password= login_password.text.toString()
 
     }
 

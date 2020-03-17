@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="409dp"
+android:layout_height="346dp"
+android:orientation="vertical">
+
+<ImageView
+    android:id="@+id/one_book"
+    android:layout_width="75dp"
+    android:layout_height="100dp"
+    android:layout_marginStart="40dp"
+    android:layout_marginTop="60dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:srcCompat="@drawable/book_two" />
+
+<ImageView
+    android:id="@+id/two_book"
+    android:layout_width="75dp"
+    android:layout_height="100dp"
+    android:layout_marginStart="55dp"
+    android:layout_marginTop="60dp"
+    app:layout_constraintStart_toEndOf="@+id/one_book"
+    app:layout_constraintTop_toTopOf="parent"
+    app:srcCompat="@drawable/book_one" />
+
+<ImageView
+    android:id="@+id/three_book"
+    android:layout_width="75dp"
+    android:layout_height="100dp"
+    android:layout_marginStart="56dp"
+    android:layout_marginTop="60dp"
+    app:layout_constraintStart_toEndOf="@+id/two_book"
+    app:layout_constraintTop_toTopOf="parent"
+    app:srcCompat="@drawable/book_three" />
+
+<View
+    android:id="@+id/divider2"
+    android:layout_width="407dp"
+    android:layout_height="1dp"
+    android:layout_marginTop="3dp"
+    android:layout_marginEnd="1dp"
+    android:background="?android:attr/listDivider"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<TextView
+    android:id="@+id/one_introduce"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_marginStart="56dp"
+    android:layout_marginTop="24dp"
+    android:text="one_intro"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/one_book" />
+
+<TextView
+    android:id="@+id/two_introduce"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_marginStart="88dp"
+    android:layout_marginTop="24dp"
+    android:text="two_intro"
+    app:layout_constraintStart_toEndOf="@+id/one_introduce"
+    app:layout_constraintTop_toBottomOf="@+id/two_book" />
+
+<TextView
+    android:id="@+id/three_introduce"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_marginStart="88dp"
+    android:layout_marginTop="24dp"
+    android:text="three_intro"
+    app:layout_constraintStart_toEndOf="@+id/two_introduce"
+    app:layout_constraintTop_toBottomOf="@+id/three_book" />
+
+<TextView
+    android:id="@+id/my_theme"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="33dp"
+    android:layout_marginTop="9dp"
+    android:text="TextView"
+    android:textColor="@android:color/black"
+    android:textSize="24sp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/divider2" />
+</androidx.constraintlayout.widget.ConstraintLayout>

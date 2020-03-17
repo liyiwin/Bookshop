@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+
+    >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/book_list_layout"
+    android:layout_width="392dp"
+    android:layout_height="wrap_content"
+    android:background="#1DE9EAF0">
+
+    <View
+        android:id="@+id/divider21"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/book_list_image"
+        android:layout_width="107dp"
+        android:layout_height="129dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/book_two" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/book_list_image"
+        app:layout_constraintTop_toBottomOf="@+id/divider21">
+
+        <TextView
+            android:id="@+id/book_list_titlecell"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/book_list_authorcell"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="author"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/book_list_introcell"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="introduce"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/book_list_likecell"
+        android:layout_width="35dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/my_book_comment"
+        app:srcCompat="@drawable/heart_white" />
+
+    <TextView
+        android:id="@+id/my_book_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="10dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/divider21" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

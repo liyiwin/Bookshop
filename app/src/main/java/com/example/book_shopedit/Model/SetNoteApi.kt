@@ -71,12 +71,6 @@ fun setNote(viewModel:ViewModel_NoteData,mytoken:String,activity: Activity){
 }
 
 
-
-
-
-
-
-
 fun set_important_note(readingInfo_id:String, mytoken:String){
 
     val url2 = "http://104.199.148.167/api/reading/important/$readingInfo_id"

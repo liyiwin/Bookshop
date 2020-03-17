@@ -38,7 +38,6 @@ fun filter_note(l:MutableList<my_data_book_note>):MutableList<my_data_book_note>
 
     }
 
-
     return l2
 
 }

@@ -1,6 +1,8 @@
 package com.example.book_shopedit.Model
+
 import android.app.Activity
-import com.example.book_shopedit.Data.my_data_book_list
+import com.example.book_shopedit.Data.my_data_book_theme
+import com.example.book_shopedit.Data.my_data_booktheme_list
 import com.example.book_shopedit.ViewModel.ViewModel_Total_list
 import okhttp3.*
 import org.json.JSONObject
@@ -8,7 +10,7 @@ import java.io.IOException
 
 private var OkHttpClient = okhttp3.OkHttpClient().newBuilder().build()
 
-fun filter_wishlist(viewModel: ViewModel_Total_list,category:String, mytoken:String, activity: Activity){
+fun filter_themewishlist(viewModel: ViewModel_Total_list, theme:String, mytoken:String, activity: Activity){
 
     val my_like_list = mutableListOf<Int>()
     val url4 = "http://104.199.148.167/api/wishlists"
@@ -42,7 +44,7 @@ fun filter_wishlist(viewModel: ViewModel_Total_list,category:String, mytoken:Str
                         my_like_list.add(book_id)
                     }
 
-                    this_sort_categorylist(viewModel, activity, category,my_like_list)
+                    this_sort_themelist(viewModel, activity, theme,my_like_list)
                 }
 
             }
@@ -50,9 +52,16 @@ fun filter_wishlist(viewModel: ViewModel_Total_list,category:String, mytoken:Str
 
         }
     })
-    }
+}
 
-fun add_into_wishlist(viewModel:ViewModel_Total_list,id_add:String,mytoken:String,activity: Activity,list:MutableList<my_data_book_list>){
+
+
+
+
+
+
+
+fun add_into_themewishlist(viewModel:ViewModel_Total_list,id_add:String,mytoken:String,activity: Activity,list:MutableList<my_data_booktheme_list>){
 
     val url2 = "http://104.199.148.167/api/books/addToWishList"
     val body2 = FormBody.Builder().add("book_id",id_add).add("api_token",mytoken).build()
@@ -77,7 +86,7 @@ fun add_into_wishlist(viewModel:ViewModel_Total_list,id_add:String,mytoken:Strin
 
                 activity.runOnUiThread{
 
-                    viewModel.set_total_list(list)
+                    viewModel.set_total_theme_list(list)
 
                 }
 
@@ -92,7 +101,7 @@ fun add_into_wishlist(viewModel:ViewModel_Total_list,id_add:String,mytoken:Strin
 }
 
 
-fun remove_from_wishlist(viewModel:ViewModel_Total_list,id_delete:String,mytoken:String,activity: Activity,list:MutableList<my_data_book_list>) {
+fun remove_from_themewishlist(viewModel:ViewModel_Total_list,id_delete:String,mytoken:String,activity: Activity,list:MutableList<my_data_booktheme_list>) {
 
     val url3 = "http://104.199.148.167/api/books/deleteWishBook/$id_delete"
 
@@ -118,8 +127,8 @@ fun remove_from_wishlist(viewModel:ViewModel_Total_list,id_delete:String,mytoken
                 list.map{ if (it.book_id == id){it.is_in_like = false}  }
 
                 activity.runOnUiThread {
-                    
-                    viewModel.set_total_list(list)
+
+                    viewModel.set_total_theme_list(list)
 
 
                 }
@@ -128,6 +137,15 @@ fun remove_from_wishlist(viewModel:ViewModel_Total_list,id_delete:String,mytoken
 
         }
 
-
     })}
+
+
+
+
+
+
+
+
+
+
 

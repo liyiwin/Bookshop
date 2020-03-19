@@ -6,126 +6,139 @@
     android:layout_height="match_parent"
     tools:context=".BookShop_Page.Book_DetailActivity">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/constraintLayout2"
-    android:layout_width="360dp"
-    android:layout_height="59dp"
-    android:background="#65BDC1C9"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
-
-    <TextView
-        android:id="@+id/my_book_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="17dp"
-        android:text="書籍詳細"
-        android:textColor="@android:color/background_dark"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/returnpg_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="19dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="?attr/actionModeCloseDrawable" />
-</androidx.constraintlayout.widget.ConstraintLayout>
-
-<LinearLayout
-    android:id="@+id/linearLayout"
-    android:layout_width="360dp"
-    android:layout_height="129dp"
-    android:layout_marginTop="1dp"
-    android:layout_marginEnd="1dp"
-    android:orientation="horizontal"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="120dp"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:id="@+id/my_book_detail_image"
-            android:layout_width="105dp"
-            android:layout_height="121dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="7dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/my_book_detail_title"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:textColor="@android:color/black" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp">
-
-            <RatingBar
-                android:id="@+id/ratingBar3"
-                android:layout_width="237dp"
-                android:layout_height="42dp"
-                android:scaleX="0.5"
-                android:scaleY="0.5"
-                android:stepSize="1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <TextView
-            android:id="@+id/my_book_detail_author"
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
-
-        <TextView
-            android:id="@+id/my_book_detail_price"
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
-
-    </LinearLayout>
-</LinearLayout>
-
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/constraintLayout3"
-    android:layout_width="360dp"
-    android:layout_height="wrap_content"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="360dp"
-        android:layout_height="wrap_content"
+        android:layout_height="58dp"
+        android:background="#65BDC1C9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/my_book_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="17dp"
+            android:text="書籍詳細"
+            android:textColor="@android:color/background_dark"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/returnpg_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="19dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="?attr/actionModeCloseDrawable" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="359dp"
+        android:layout_height="184dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="121dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/my_book_detail_image"
+                android:layout_width="103dp"
+                android:layout_height="145dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="7dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="184dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/my_book_detail_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                <RatingBar
+                    android:id="@+id/ratingBar3"
+                    android:layout_width="237dp"
+                    android:layout_height="42dp"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5"
+                    android:stepSize="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/my_book_detail_author"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/my_book_detail_price"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="360dp"
+        android:layout_height="275dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="357dp"
+            android:layout_height="237dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout2">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/my_book_information_container"
+                android:layout_width="350dp"
+                android:layout_height="232dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <View
             android:id="@+id/divider19"
-            android:layout_width="380dp"
+            android:layout_width="0dp"
             android:layout_height="3dp"
             android:background="#3784878C"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toTopOf="@+id/tabLayout2"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout2"
-            android:layout_width="360dp"
-            android:layout_height="48dp"
+            android:layout_width="369dp"
+            android:layout_height="43dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.tabs.TabItem
@@ -139,56 +152,47 @@
                 android:text="出版社資訊" />
         </com.google.android.material.tabs.TabLayout>
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/my_book_information_container"
-            android:layout_width="360dp"
-            android:layout_height="289dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginEnd="1dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tabLayout2" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
-
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="360dp"
-    android:layout_height="54dp"
-    android:background="@color/browser_actions_bg_grey"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
-
-    <ImageView
-        android:id="@+id/mylikecell"
-        android:layout_width="52dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="8dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="357dp"
+        android:layout_height="54dp"
         android:layout_marginTop="4dp"
-        app:layout_constraintStart_toEndOf="@+id/buybook_btn"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/heart_white" />
+        android:background="@android:color/background_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
-    <Button
-        android:id="@+id/buybook_btn"
-        android:layout_width="120dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/btn_two"
-        android:text="購買"
-        app:layout_constraintStart_toEndOf="@+id/button4"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/mylikecell"
+            android:layout_width="52dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toEndOf="@+id/buybook_btn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/heart_white" />
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="120dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/btn_two"
-        android:text="試讀"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/buybook_btn"
+            android:layout_width="120dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_two"
+            android:text="購買"
+            app:layout_constraintStart_toEndOf="@+id/button4"
+            app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="120dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_two"
+            android:text="試讀"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

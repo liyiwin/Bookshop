@@ -1,8 +1,7 @@
 package com.example.book_shopedit.Model
 
 import android.app.Activity
-import androidx.lifecycle.ViewModel
-import com.example.book_shopedit.Data.my_data_book_list
+import com.example.book_shopedit.Data.my_data_booktheme_list
 import com.example.book_shopedit.ViewModel.ViewModel_Total_list
 import okhttp3.Call
 import okhttp3.Callback
@@ -14,13 +13,13 @@ import java.io.IOException
 private var OkHttpClient = okhttp3.OkHttpClient().newBuilder().build()
 
 
-fun this_sort_categorylist(viewModel:ViewModel_Total_list, activity: Activity, category:String, list: MutableList<Int>){
+fun this_sort_themelist(viewModel: ViewModel_Total_list, activity: Activity, theme:String, list: MutableList<Int>){
 
-    val my_book_list:MutableList<my_data_book_list> = ArrayList<my_data_book_list>()
-    val url = "http://104.199.148.167/api/categories/books/$category"
+    val my_book_list:MutableList<my_data_booktheme_list> = ArrayList<my_data_booktheme_list>()
+    val url = "http://104.199.148.167/api/themes/books/$theme"
     val request = Request.Builder().url(url).build()
     val call1 = OkHttpClient .newCall(request)
-    call1.enqueue(object: Callback{
+    call1.enqueue(object: Callback {
         override fun onFailure(call: Call, e: IOException) {
 
         }
@@ -48,27 +47,12 @@ fun this_sort_categorylist(viewModel:ViewModel_Total_list, activity: Activity, c
                     val image = my_object.getString("image")
                     val comment_score = my_object.getInt("comment_score")
                     val book_id = my_object.getInt("book_id")
-                    val category_id = my_object.getInt("category_id")
+                    val theme_id = my_object.getInt("theme_id")
 
-                    if (book_id in list){
-                    my_book_list.add(
-                        my_data_book_list(
-                            title,
-                            author,
-                            translator,
-                            press,
-                            intro,
-                            image,
-                            comment_score,
-                            book_id,
-                            category_id,
-                            true
-                        )
-                    )}
-                    else{
+                    if (book_id in list) {
 
                         my_book_list.add(
-                            my_data_book_list(
+                            my_data_booktheme_list(
                                 title,
                                 author,
                                 translator,
@@ -77,7 +61,25 @@ fun this_sort_categorylist(viewModel:ViewModel_Total_list, activity: Activity, c
                                 image,
                                 comment_score,
                                 book_id,
-                                category_id,
+                                theme_id,
+                                true
+                            )
+                        )
+
+
+                    } else {
+
+                        my_book_list.add(
+                            my_data_booktheme_list(
+                                title,
+                                author,
+                                translator,
+                                press,
+                                intro,
+                                image,
+                                comment_score,
+                                book_id,
+                                theme_id,
                                 false
                             )
                         )
@@ -89,7 +91,7 @@ fun this_sort_categorylist(viewModel:ViewModel_Total_list, activity: Activity, c
 
                 activity.runOnUiThread {
 
-                 viewModel.set_total_list(my_book_list)
+                    viewModel.set_total_theme_list(my_book_list)
 
                 }
 
@@ -100,8 +102,3 @@ fun this_sort_categorylist(viewModel:ViewModel_Total_list, activity: Activity, c
     })
 
 }
-
-
-
-
-

@@ -13,13 +13,12 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.example.book_shopedit.BookShop_Page.Book_listActivity
-import com.example.book_shopedit.BookShop_Page.Book_list_twoActivity
 import com.example.book_shopedit.BookShop_Page.TotoalSortActivity
 import com.example.book_shopedit.Data.my_data_booktheme_list_two
 import com.example.book_shopedit.Data.my_data_category
 import com.example.book_shopedit.R
 
-class BookShop_Adapter (val context: Context, val list: MutableList<my_data_booktheme_list_two>, val list2:MutableList<my_data_category>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class BookShop_Adapter (val context: Context, val outer_theme_list: MutableList<my_data_booktheme_list_two>, val outer_category_list:MutableList<my_data_category>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object{
 
@@ -33,6 +32,23 @@ class BookShop_Adapter (val context: Context, val list: MutableList<my_data_book
 
     }
 
+    var inner_theme_list = mutableListOf<my_data_booktheme_list_two>()
+
+    var inner_category_list = mutableListOf<my_data_category>()
+
+
+
+    init {
+
+        inner_theme_list = outer_theme_list
+
+        inner_category_list = outer_category_list
+
+    }
+
+
+
+
     val handler = Handler()
 
     var autoScrollRunnable: Runnable? = null
@@ -40,6 +56,8 @@ class BookShop_Adapter (val context: Context, val list: MutableList<my_data_book
     var this_Onclick:Onclick? = null
 
     var currentItem = 0
+
+
 
 
     interface Onclick {
@@ -133,7 +151,6 @@ class BookShop_Adapter (val context: Context, val list: MutableList<my_data_book
 
         return when(position){
 
-
             0 -> TYPE_SIX
 
             1 -> TYPE_SEVEN
@@ -170,7 +187,7 @@ class BookShop_Adapter (val context: Context, val list: MutableList<my_data_book
 
                 5->{
 
-                    val my_list = list.filter { it.theme_name == "推薦｜軟體開發聖經" }
+                    val my_list = inner_theme_list.filter { it.theme_name == "推薦｜軟體開發聖經" }
 
                     if ( my_list.size > 0){
 
@@ -278,20 +295,18 @@ class BookShop_Adapter (val context: Context, val list: MutableList<my_data_book
                             }
 
 
-                        }
+                         }
 
                         )
 
                     }
-
-
 
                 }
 
 
                 8->{
 
-                    val my_list = list.filter { it.theme_name == "感的資料科學家" }
+                    val my_list = inner_theme_list.filter { it.theme_name == "感的資料科學家" }
 
                     if ( my_list.size > 0) {
 
@@ -402,8 +417,6 @@ class BookShop_Adapter (val context: Context, val list: MutableList<my_data_book
                         )
                     }
 
-
-
                 }
 
 
@@ -418,7 +431,7 @@ class BookShop_Adapter (val context: Context, val list: MutableList<my_data_book
 
                 3 ->{
 
-                    val my_list = list.filter { it.theme_name.contains("IT狗精品區")  }
+                    val my_list = inner_theme_list.filter { it.theme_name.contains("IT狗精品區")  }
 
                     if( my_list.size > 0) {
 
@@ -448,7 +461,6 @@ class BookShop_Adapter (val context: Context, val list: MutableList<my_data_book
 
 
                                     }
-
 
 
                                     1 ->{holder.dotone.setImageResource(R.drawable.enable)
@@ -532,7 +544,7 @@ class BookShop_Adapter (val context: Context, val list: MutableList<my_data_book
 
                 6 ->{
 
-                    val my_list = list.filter { it.theme_name == "主題｜設計模式" }
+                    val my_list = inner_theme_list.filter { it.theme_name == "主題｜設計模式" }
 
                     if( my_list.size > 0) {
 
@@ -645,7 +657,7 @@ class BookShop_Adapter (val context: Context, val list: MutableList<my_data_book
 
                 9 ->{
 
-                    val my_list = list.filter { it.theme_name == "無瑕的程式碼超值合購" }
+                    val my_list = inner_theme_list.filter { it.theme_name == "無瑕的程式碼超值合購" }
 
                     if( my_list.size > 0) {
 
@@ -763,7 +775,7 @@ class BookShop_Adapter (val context: Context, val list: MutableList<my_data_book
 
             holder.bus_btn.setOnClickListener {
 
-                val my_list = list2.filter { it.category_name == "資料科學" }
+                val my_list = inner_category_list.filter { it.category_name == "資料科學" }
 
                 val my_id = my_list[0].id
 
@@ -781,7 +793,7 @@ class BookShop_Adapter (val context: Context, val list: MutableList<my_data_book
 
             holder.lit_btn.setOnClickListener {
 
-                val my_list = list2.filter { it.category_name == "人工智慧" }
+                val my_list = inner_category_list.filter { it.category_name == "人工智慧" }
 
                 val my_id = my_list[0].id
 
@@ -807,7 +819,7 @@ class BookShop_Adapter (val context: Context, val list: MutableList<my_data_book
 
             holder.sci_btn.setOnClickListener {
 
-                val my_list = list2.filter { it.category_name == "前端開發" }
+                val my_list = inner_category_list.filter { it.category_name == "前端開發" }
 
                 val my_id = my_list[0].id
 
@@ -826,7 +838,7 @@ class BookShop_Adapter (val context: Context, val list: MutableList<my_data_book
 
             holder.so_btn.setOnClickListener {
 
-                val my_list = list2.filter { it.category_name == "職涯發展" }
+                val my_list = inner_category_list.filter { it.category_name == "職涯發展" }
 
                 val my_id = my_list[0].id
 
@@ -845,7 +857,7 @@ class BookShop_Adapter (val context: Context, val list: MutableList<my_data_book
 
             holder.sty_btn.setOnClickListener {
 
-                val my_list = list2.filter { it.category_name == "網頁設計" }
+                val my_list = inner_category_list.filter { it.category_name == "網頁設計" }
 
                 val my_id = my_list[0].id
 
@@ -910,6 +922,8 @@ class BookShop_Adapter (val context: Context, val list: MutableList<my_data_book
 
         if (holder is  ViewHolder_seven){
 
+            // 所有分類
+
             holder.TotoalSortbtn.setOnClickListener {
 
                 val intent = Intent(context, TotoalSortActivity::class.java)
@@ -918,37 +932,26 @@ class BookShop_Adapter (val context: Context, val list: MutableList<my_data_book
 
             }
 
-            //免費書籍
+            //主題推薦
 
             holder.FreeBookbtn.setOnClickListener {
 
-                val intent = Intent(context, Book_list_twoActivity::class.java)
-
-                context.startActivity(intent)
 
                 this_Onclick?.click(1)
 
             }
 
-            //全球暢銷
+            //服務代訂英文書
 
             holder.Global_SellWellbtn.setOnClickListener {
-
-                val intent = Intent(context, Book_list_twoActivity::class.java)
-
-                context.startActivity(intent)
 
                 this_Onclick?.click(2)
 
             }
 
-            //最新書籍
+            //套件滿五千
 
             holder.LastBookbtn.setOnClickListener {
-
-                val intent = Intent(context,Book_list_twoActivity::class.java)
-
-                context.startActivity(intent)
 
                 this_Onclick?.click(3)
 
@@ -1030,6 +1033,25 @@ class BookShop_Adapter (val context: Context, val list: MutableList<my_data_book
         val FreeBookbtn = view.findViewById<ImageView>(R.id.FreeBookbtn)
 
         val LastBookbtn  = view.findViewById<ImageView>(R.id.LastBookbtn)
+
+    }
+
+
+    fun update_themelist(my_list: MutableList<my_data_booktheme_list_two>){
+
+
+        inner_theme_list = my_list
+
+        notifyDataSetChanged()
+
+
+    }
+
+    fun update_category_list(my_list: MutableList<my_data_category>){
+
+        inner_category_list = my_list
+
+        notifyDataSetChanged()
 
     }
 

@@ -6,4 +6,41 @@
     android:layout_height="match_parent"
     tools:context=".BookShop_Page.Book_list_twoActivity">
 
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/constraintLayout_two"
+    android:layout_width="412dp"
+    android:layout_height="59dp"
+    android:background="#4A84878C"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <TextView
+        android:id="@+id/my_book_list_title_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="17dp"
+        android:text="商業理財"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<FrameLayout
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/constraintLayout_two">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/book_list_recyclerview_two"
+        android:layout_width="409dp"
+        android:layout_height="match_parent" />
+</FrameLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

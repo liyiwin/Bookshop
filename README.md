@@ -43,5 +43,4 @@
 
 ![](https://i.imgur.com/iDWHaep.png)
 
-  讀者可以收藏想買的書
 
